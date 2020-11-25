@@ -1,0 +1,366 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 450px;
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(ellipse farthest-corner at center top, #9f9eff 0%, #3935fa 100%);
+  color: #fff;
+  font-family: 'Nunito', serif;
+}
+
+
+.flex-container {
+  position: relative;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 500px;
+  background: linear-gradient(rgb(201, 238, 255), #c5c5c5), radial-gradient(circle at top left, #0019a7, #91eeff);
+  border-radius: 10px;
+  box-shadow: 0 7px 30px rgba(62, 9, 11, .3);
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-end;
+  flex-direction: column;
+}
+
+.cover-img {
+  background-image: url('nl.jpg');
+  height: 30%;
+  width: inherit;
+  position: relative;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.question {
+  display: absolute;
+  color: black;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 33px;
+  transform: translateY(-33px);
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+
+}
+
+.questionGone{
+  transform: translateY(30px) rotateX(90deg);
+}
+
+.result {
+  color: blue;
+  position: relative;
+  top: 1%;
+  font-size: 30px;
+  font-family: sans-serif;
+  /* visibility: hidden; */
+  /* animation-name: roll; */
+  transition-duration: 100ms;
+  /* transition-timing-function: ease-out; */
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.newNumb {
+  color: black;
+  position: absolute;
+  font-size: 26px;
+  font-family: sans-serif;
+  top: 50%;
+  transform: translateY(-31px) rotateX(80deg);
+  color: black;
+  transition-duration: 200ms;
+  transition-delay: 1500ms;
+  visibility: hidden;
+  transition-timing-function: ease-out;
+  font-weight: bold;
+}
+
+.newRoll {
+  transform: translateY(26px);
+  visibility: visible;
+
+}
+
+
+#powerBtn {
+  margin-top: 10px;
+}
+
+.resultRoll {
+  transform: translateY(57px) rotateX(90deg);
+};
+
+/* .resultRoll2{
+  transform: translateY(57px) rotateX(90deg);
+}; */
+
+.makeOrange {
+  color: orange;
+}
+
+.resultRoll2{
+  transform: translateY(-64px) rotateX(90deg);
+}
+
+
+
+
+
+
+
+
+
+.showResult {
+  color: red;
+  position: relative;
+  top: 20%;
+  font-size: 60px;
+  font-family: sans-serif;
+  /* visibility: hidden; */
+}
+
+
+
+
+.line {
+  position: relative;
+  /* important, parents position (flex-container) has aboslute position. */
+  height: 3px;
+  width: 100px;
+  background-color: blue;
+  content: '';
+  top: 22%;
+}
+
+.circle {
+  position: relative;
+  background: transparent;
+  border-radius: 50%;
+  border: 3px black solid;
+  width: 120px;
+  height: 120px;
+  transform: translateY(80px);
+
+  pointer-events: all;
+}
+
+.circle:hover {
+  border: 4px black solid;
+}
+
+
+.genBtn {
+  position: relative;
+  color: black;
+  top: 10%;
+  right: 20%;
+  border-radius: 2px;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(rgb(21, 121, 252), rgb(32, 54, 250)), radial-gradient(circle at top left, #0019a7, #3d7ffa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-size: 13px;
+  color: white;
+  font-family: sans-serif;
+  cursor: pointer;
+
+
+
+}
+
+.genBtn:hover {
+  position: relative;
+  color: black;
+  top: 10%;
+  border-radius: 2px;
+  text-decoration: none;
+  color: rgb(172, 172, 172);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(rgb(6, 101, 224), rgb(6, 28, 228)), radial-gradient(circle at top left, #0019a7, #3d7ffa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-size: 13px;
+  color: rgb(231, 231, 231);
+  font-family: sans-serif;
+  cursor: pointer;
+
+
+
+}
+
+.genBtn:active {
+  position: relative;
+  color: black;
+  top: 10%;
+  border-radius: 2px;
+  text-decoration: none;
+  color: rgb(172, 172, 172);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(rgb(4, 75, 168), rgb(3, 23, 206)), radial-gradient(circle at top left, #0019a7, #3d7ffa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-size: 13px;
+  color: rgb(207, 207, 207);
+  font-family: sans-serif;
+  cursor: pointer;
+  transform: translateY(2px);
+
+
+}
+
+.genBtnPower {
+  position: relative;
+  color: black;
+  top: -2%;
+  left: 60%;
+  border-radius: 2px;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(rgb(21, 121, 252), rgb(32, 54, 250)), radial-gradient(circle at top left, #0019a7, #3d7ffa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-size: 12px;
+  color: white;
+  font-family: sans-serif;
+  cursor: pointer;
+  
+
+
+
+}
+
+.genBtnPower:hover {
+  position: relative;
+  color: black;
+  top: -2%;
+  border-radius: 2px;
+  text-decoration: none;
+  color: rgb(172, 172, 172);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(rgb(6, 101, 224), rgb(6, 28, 228)), radial-gradient(circle at top left, #0019a7, #3d7ffa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-size: 13px;
+  color: rgb(231, 231, 231);
+  font-family: sans-serif;
+  cursor: pointer;
+
+
+
+}
+
+.genBtnPower:active {
+  position: relative;
+  color: black;
+  top: -2%;
+  border-radius: 2px;
+  text-decoration: none;
+  color: rgb(172, 172, 172);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(rgb(4, 75, 168), rgb(3, 23, 206)), radial-gradient(circle at top left, #0019a7, #3d7ffa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-size: 13px;
+  color: rgb(207, 207, 207);
+  font-family: sans-serif;
+  cursor: pointer;
+  transform: translateY(2px);
+
+
+}
+
+.refreshBtn {
+  position: relative;
+  color: black;
+  /* top: 10%; */
+  border-radius: 2px;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(rgb(21, 121, 252), rgb(32, 54, 250)), radial-gradient(circle at top left, #0019a7, #3d7ffa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-size: 13px;
+  color: white;
+  font-family: sans-serif;
+  cursor: pointer;
+
+
+
+}
+
+.refreshBtn:hover {
+  position: relative;
+  color: black;
+  /* top: 10%; */
+  border-radius: 2px;
+  text-decoration: none;
+  color: rgb(172, 172, 172);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(rgb(6, 101, 224), rgb(6, 28, 228)), radial-gradient(circle at top left, #0019a7, #3d7ffa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-size: 13px;
+  color: rgb(231, 231, 231);
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.refreshBtn:active {
+  position: relative;
+  color: black;
+  /* top: 10%; */
+  border-radius: 2px;
+  text-decoration: none;
+  color: rgb(172, 172, 172);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background-image: linear-gradient(rgb(4, 75, 168), rgb(3, 23, 206)), radial-gradient(circle at top left, #0019a7, #3d7ffa);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  font-size: 13px;
+  color: rgb(207, 207, 207);
+  font-family: sans-serif;
+  cursor: pointer;
+  transform: translateY(2px);
+
+
+}
+
+/* .circle {
+    background: transparent;
+    border-radius: 50%;
+    border: 2px black solid;
+    width: 100px;
+    height: 100px;
+} */
+
+
+
+span {
+  display: block;
+  padding: 8px 22px;
+}
